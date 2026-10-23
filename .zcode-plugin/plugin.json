@@ -1,6 +1,6 @@
 {
   "name": "ytms-token-usage-statusbar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Token usage statusbar: /usage query command, per-turn usage line after each reply, and read-only usage MCP tools backed by the local ZCode SQLite database.",
   "author": {
     "name": "yequn"
@@ -14,7 +14,7 @@
       "args": [
         "/Applications/ZCode.app/Contents/Resources/glm/zcode.cjs",
         "__zcode-plugin-host",
-        "${ZCODE_PLUGIN_ROOT}/mcp/server.mjs"
+        "${ZCODE_PLUGIN_ROOT}/mcp/launch.mjs"
       ],
       "env": {
         "ELECTRON_RUN_AS_NODE": "1"
