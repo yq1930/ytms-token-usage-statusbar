@@ -1,0 +1,24 @@
+{
+  "name": "token-usage-statusbar",
+  "version": "0.1.0",
+  "description": "Token usage statusbar: /usage query command, per-turn usage line after each reply, and read-only usage MCP tools backed by the local ZCode SQLite database.",
+  "author": {
+    "name": "yequn"
+  },
+  "license": "MIT",
+  "commands": "commands",
+  "hooks": "hooks/hooks.json",
+  "mcpServers": {
+    "usage": {
+      "command": "/Applications/ZCode.app/Contents/Frameworks/ZCode Helper.app/Contents/MacOS/ZCode Helper",
+      "args": [
+        "/Applications/ZCode.app/Contents/Resources/glm/zcode.cjs",
+        "__zcode-plugin-host",
+        "${ZCODE_PLUGIN_ROOT}/mcp/server.mjs"
+      ],
+      "env": {
+        "ELECTRON_RUN_AS_NODE": "1"
+      }
+    }
+  }
+}

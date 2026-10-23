@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "process",
+            "command": "/usr/bin/python3",
+            "args": [
+              "${ZCODE_PLUGIN_ROOT}/hooks/statusline.py",
+              "stop"
+            ],
+            "timeoutMs": 10000,
+            "statusMessage": "用量状态栏"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "process",
+            "command": "/usr/bin/python3",
+            "args": [
+              "${ZCODE_PLUGIN_ROOT}/hooks/statusline.py",
+              "sessionstart"
+            ],
+            "timeoutMs": 10000,
+            "statusMessage": "用量状态栏"
+          }
+        ]
+      }
+    ]
+  }
+}
