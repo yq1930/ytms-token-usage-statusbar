@@ -1,0 +1,22 @@
+{
+  "name": "token-usage-statusbar",
+  "owner": {
+    "name": "yq1930"
+  },
+  "plugins": [
+    {
+      "name": "token-usage-statusbar",
+      "source": ".",
+      "version": "0.1.0",
+      "description": "Token usage statusbar for ZCode desktop: /usage command, per-turn usage line, and read-only usage MCP tools backed by local SQLite.",
+      "displayName": "Token Usage Statusbar",
+      "displayName_i18n": {
+        "zh-CN": "Token 用量状态栏"
+      },
+      "description_i18n": {
+        "zh-CN": "Token 用量状态栏：/usage 查询、每轮回复后的用量摘要行、usage MCP 只读查询工具；数据来自本地 SQLite，不上传。"
+      },
+      "category": "productivity"
+    }
+  ]
+}

@@ -14,6 +14,43 @@ ZCode 桌面端的 Token 用量状态栏插件（参考 [ByteRax/zcode-token-usa
 | 会话开始摘要 | SessionStart hook | 开启后显示今日/近 7 天累计与上次活动 |
 | `usage_summary` / `recent_turns` | MCP 工具 | 随时可被 Agent 调用的只读查询 |
 
+## 安装
+
+要求：macOS + ZCode 桌面端。钩子使用系统自带 `/usr/bin/python3`，MCP server 使用 ZCode 自带的 Node，**无需安装任何依赖**。
+
+### 方式一：直接添加 GitHub 仓库（推荐先试）
+
+1. 打开 ZCode 桌面端 **插件市场 → 添加 → 添加插件市场**
+2. 粘贴仓库地址：`https://github.com/yq1930/token-usage-statusbar`，点击 **添加**
+3. 打开 **个人 → token-usage-statusbar → Token Usage Statusbar**，核对版本后点击 **安装**
+
+如果你的 ZCode 版本的"添加插件市场"不支持远程仓库地址（会提示格式错误或找不到清单），用方式二。
+
+### 方式二：克隆到本地后添加（稳定可用）
+
+```bash
+git clone https://github.com/yq1930/token-usage-statusbar.git
+```
+
+1. **插件市场 → 添加 → 添加插件市场**，粘贴克隆出来的目录路径（仓库根目录，即 `.claude-plugin` 的上一级），点击 **添加**
+2. **个人 → token-usage-statusbar → Token Usage Statusbar → 安装**
+
+### 安装后
+
+- 任意会话输入 `/usage`：查看今日用量摘要（支持 `today` / `week` / `all` / `session <id>`）
+- 输入 `/usage on`：开启每轮回复后自动追加的一行用量摘要（`/usage off` 关闭；默认关闭，因为该行会占用少量上下文）
+- 任意对话里让 Agent 调用 MCP 工具 `usage_summary` / `recent_turns` 查询用量
+
+预期效果（`/usage` 输出示意）：
+
+```
+⚡ Token 用量（今日）
+↑ 输入 3.7M（缓存命中 49%）  ↓ 输出 43.4k  ·  平均 35.5 tok/s  ·  TTFT 3.6s
+上下文：当前会话 ≈ 154.2k tokens（77% / 200k）
+```
+
+> 提示：ZCode 不装在 `/Applications/ZCode.app` 时，需把 `plugin.json` 里 MCP server 的 Helper 路径改成你的安装位置。
+
 ## 指标口径
 
 - **tok/s** =（输出 token + 思考 token）÷ 模型生成时长（不含工具执行时间），按 `model_usage` 聚合
@@ -28,12 +65,15 @@ ZCode 桌面端的 Token 用量状态栏插件（参考 [ByteRax/zcode-token-usa
 ## 文件结构
 
 ```
-token-usage-statusbar/
-├── .zcode-plugin/plugin.json   # 清单：commands + hooks + mcpServers
+token-usage-statusbar/            # 仓库根同时是一个插件市场源
+├── .claude-plugin/marketplace.json  # 市场清单（source: "." 指向仓库根本身）
+├── .zcode-plugin/plugin.json   # 插件清单：commands + hooks + mcpServers
 ├── commands/usage.md           # /usage 斜杠命令
 ├── hooks/hooks.json            # Stop / SessionStart 钩子（/usr/bin/python3）
 ├── hooks/statusline.py         # 钩子脚本：只读查询 + 组装一行摘要
-└── mcp/server.mjs              # usage MCP server（零依赖，跑在 ZCode 自带 Node 上）
+├── mcp/server.mjs              # usage MCP server（零依赖，跑在 ZCode 自带 Node 上）
+├── README.md
+└── LICENSE
 ```
 
 ## 依赖与限制
