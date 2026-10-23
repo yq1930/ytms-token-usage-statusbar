@@ -21,7 +21,7 @@ ZCode 桌面端的 Token 用量状态栏插件（参考 [ByteRax/zcode-token-usa
 ### 方式一：直接添加 GitHub 仓库（推荐先试）
 
 1. 打开 ZCode 桌面端 **插件市场 → 添加 → 添加插件市场**
-2. 粘贴仓库地址：`https://github.com/yq1930/token-usage-statusbar`，点击 **添加**
+2. 粘贴仓库地址：`https://github.com/yq1930/ytms-token-usage-statusbar`，点击 **添加**
 3. 打开 **个人 → token-usage-statusbar → Token Usage Statusbar**，核对版本后点击 **安装**
 
 如果你的 ZCode 版本的"添加插件市场"不支持远程仓库地址（会提示格式错误或找不到清单），用方式二。
@@ -29,7 +29,7 @@ ZCode 桌面端的 Token 用量状态栏插件（参考 [ByteRax/zcode-token-usa
 ### 方式二：克隆到本地后添加（稳定可用）
 
 ```bash
-git clone https://github.com/yq1930/token-usage-statusbar.git
+git clone https://github.com/yq1930/ytms-token-usage-statusbar.git
 ```
 
 1. **插件市场 → 添加 → 添加插件市场**，粘贴克隆出来的目录路径（仓库根目录，即 `.claude-plugin` 的上一级），点击 **添加**
