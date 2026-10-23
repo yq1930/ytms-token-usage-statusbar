@@ -1,4 +1,4 @@
-# token-usage-statusbar
+# ytms-token-usage-statusbar
 
 ZCode 桌面端的 Token 用量状态栏插件（参考 [ByteRax/zcode-token-usage-statusbar](https://github.com/ByteRax/zcode-token-usage-statusbar) 的思路做的官方插件形态版本）。
 
@@ -22,7 +22,7 @@ ZCode 桌面端的 Token 用量状态栏插件（参考 [ByteRax/zcode-token-usa
 
 1. 打开 ZCode 桌面端 **插件市场 → 添加 → 添加插件市场**
 2. 粘贴仓库地址：`https://github.com/yq1930/ytms-token-usage-statusbar`，点击 **添加**
-3. 打开 **个人 → token-usage-statusbar → Token Usage Statusbar**，核对版本后点击 **安装**
+3. 打开 **个人 → ytms-token-usage-statusbar → Token Usage Statusbar**，核对版本后点击 **安装**
 
 如果你的 ZCode 版本的"添加插件市场"不支持远程仓库地址（会提示格式错误或找不到清单），用方式二。
 
@@ -33,7 +33,7 @@ git clone https://github.com/yq1930/ytms-token-usage-statusbar.git
 ```
 
 1. **插件市场 → 添加 → 添加插件市场**，粘贴克隆出来的目录路径（仓库根目录，即 `.claude-plugin` 的上一级），点击 **添加**
-2. **个人 → token-usage-statusbar → Token Usage Statusbar → 安装**
+2. **个人 → ytms-token-usage-statusbar → Token Usage Statusbar → 安装**
 
 ### 安装后
 
@@ -65,7 +65,7 @@ git clone https://github.com/yq1930/ytms-token-usage-statusbar.git
 ## 文件结构
 
 ```
-token-usage-statusbar/            # 仓库根同时是一个插件市场源
+ytms-token-usage-statusbar/       # 仓库根同时是一个插件市场源
 ├── .claude-plugin/marketplace.json  # 市场清单（source: "." 指向仓库根本身）
 ├── .zcode-plugin/plugin.json   # 插件清单：commands + hooks + mcpServers
 ├── commands/usage.md           # /usage 斜杠命令

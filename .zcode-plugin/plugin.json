@@ -1,6 +1,6 @@
 {
-  "name": "token-usage-statusbar",
-  "version": "0.1.0",
+  "name": "ytms-token-usage-statusbar",
+  "version": "0.1.1",
   "description": "Token usage statusbar: /usage query command, per-turn usage line after each reply, and read-only usage MCP tools backed by the local ZCode SQLite database.",
   "author": {
     "name": "yequn"

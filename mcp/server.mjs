@@ -7,7 +7,7 @@ import { DatabaseSync } from "node:sqlite";
 import os from "node:os";
 import path from "node:path";
 
-const VERSION = "0.1.0";
+const VERSION = "0.1.1";
 const DB_PATH =
   process.env.ZCODE_DB_PATH ||
   path.join(os.homedir(), ".zcode", "cli", "db", "db.sqlite");
@@ -293,7 +293,7 @@ function handleMessage(db, line) {
         result: {
           protocolVersion: msg.params?.protocolVersion || "2024-11-05",
           capabilities: { tools: {} },
-          serverInfo: { name: "token-usage-statusbar", version: VERSION },
+          serverInfo: { name: "ytms-token-usage-statusbar", version: VERSION },
         },
       });
       return;

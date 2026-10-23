@@ -1,13 +1,13 @@
 {
-  "name": "token-usage-statusbar",
+  "name": "ytms-token-usage-statusbar",
   "owner": {
     "name": "yq1930"
   },
   "plugins": [
     {
-      "name": "token-usage-statusbar",
+      "name": "ytms-token-usage-statusbar",
       "source": ".",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "Token usage statusbar for ZCode desktop: /usage command, per-turn usage line, and read-only usage MCP tools backed by local SQLite.",
       "displayName": "Token Usage Statusbar",
       "displayName_i18n": {
